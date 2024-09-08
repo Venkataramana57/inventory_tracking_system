@@ -1,0 +1,25 @@
+<div class="col-md-4 mb-4 left" id="inventory_item_<%= inventory_item.id %>">
+  <div class="card">
+    <div class="card-header bg-secondary text-white">
+      <h5 class="card-title mb-0"><%= inventory_item.name %></h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <strong>Location:</strong> <%= inventory_item.location %>
+      </p>
+      <p class="card-text">
+        <strong>Quantity:</strong> <%= inventory_item.quantity %>
+      </p>
+    </div>
+    <div class="card-footer">
+      <%= form_with model: inventory_item, method: :patch, class: 'd-flex' do |f| %>
+        <%= f.number_field :quantity, class: 'form-control me-2', placeholder: 'Quantity', min: 0 %>
+        <%= f.submit 'Update', class: 'btn btn-success btn-sm' %>
+      <% end %>
+      <div class="error-messages mt-2">
+        <!-- Error message pops up upon giving empty quantity -->
+        <%= turbo_frame_tag "inventory_item_errors_#{inventory_item.id}" %>
+      </div>
+    </div>
+  </div>
+</div>

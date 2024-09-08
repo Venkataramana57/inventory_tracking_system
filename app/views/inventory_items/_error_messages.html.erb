@@ -1,0 +1,9 @@
+<% if inventory_item.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% inventory_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

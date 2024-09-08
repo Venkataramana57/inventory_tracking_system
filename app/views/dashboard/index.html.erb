@@ -1,0 +1,20 @@
+<%= turbo_frame_tag "new_inventory_item", src: new_inventory_item_path, target: "_bottom"%>
+
+<%= turbo_stream_from "inventory_items" %>
+
+<div class="container my-5">
+	<h2 class="mb-4">Inventory Dashboard</h2>
+	<div class="row" id="inventory-items">
+		<!-- Inventory items dynamically added/updated in multiple browser clients in the reactive form -->
+		<%= turbo_frame_tag 'inventory_items' do %>
+			<% if @inventory_items.any? %>
+				<%= render @inventory_items %>
+			<% else %>
+				<p> No inventory items available. Please create them to see here! </p>
+			<% end %>
+		<% end %>
+	</div>
+<div>
+
+
+

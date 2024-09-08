@@ -1,0 +1,31 @@
+<%= turbo_frame_tag "new_inventory_item", target: "_top" do %>
+  <div class="container p-4 container-fill">
+    <h4> New Inventory Item </h4>
+    
+    <%= form_with model: @inventory_item, data: {controller: "inventory-item", action: "turbo:submit-end->inventory-item#reset"} do |f| %>
+      <!-- Error message pops up upon giving empty data -->
+      <%= turbo_frame_tag "inventory_item_errors_new" %>
+      
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <%= f.label :name, class: "form-label" %>
+          <%= f.text_field :name, required: true, class: "form-control", placeholder: "Enter item name" %>
+        </div>
+
+        <div class="col-md-3">
+          <%= f.label :quantity, class: "form-label" %>
+          <%= f.number_field :quantity, required: true, class: "form-control", placeholder: "Enter quantity" %>
+        </div>
+
+        <div class="col-md-3">
+          <%= f.label :location, class: "form-label" %>
+          <%= f.text_field :location, required: true, class: "form-control", placeholder: "Enter location" %>
+        </div>
+
+        <div class="col-md-3 d-flex align-items-end">
+          <%= f.submit 'Create', class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
