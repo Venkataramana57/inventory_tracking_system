@@ -1,10 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a small application that tracks the inventory items while adding and while updating with quantity in reactive and realtime scenario using turbo frames and action cable that are shipped inbuilt rails-7.x.x.
 
-Things you may want to cover:
-
+Things covered:
 * Ruby version 
 	- ruby-3.0.0
 
