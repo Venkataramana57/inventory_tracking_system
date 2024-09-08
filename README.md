@@ -28,6 +28,7 @@ Things you may want to cover:
 	- Able to update the quantity.
 	- Integrated hotwire framework with turbo_frame_tag(s) to provide the interactive and realtime feel of users who monitor this application from different machines(browsers)
 	- Integrated Stimulus JS to clear the form immidiatly after the form is submitted.
+	- Refecence Video URL: https://github.com/user-attachments/assets/dd350e93-8b74-4d15-9ba4-50c58cead00c
 
 * Configuration to rn the application.
 	- cd inventory_tracking_system
